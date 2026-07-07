@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Kerabat | Barbershop & Grooming Premium</title>
+    <title>The Kerabat | Premium Barbershop & Grooming</title>
     
-    <!-- Google Fonts: Syne (Hipster/Bold) & Inter (Minimalis) -->
+    <!-- Google Fonts: Syne & Inter untuk vibe Hipster/Bold/Maskulin -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Syne:wght@700;800&display=swap" rel="stylesheet">
@@ -13,14 +13,15 @@
     <style>
         /* --- VANILLA CSS VARIABLES & RESET --- */
         :root {
-            --bg-dark: #080808;
-            --bg-card: #121212;
-            --primary: #d4af37; /* Emas Dull/Matte untuk vibe 'Kerabat' yang Premium & Maskulin */
+            --bg-dark: #09090b;
+            --bg-card: #141417;
+            --primary: #d4af37; /* Emas Hipster / Matte Gold */
+            --primary-hover: #f3cd44;
             --text-light: #ffffff;
-            --text-muted: #8a8a8a;
+            --text-muted: #a1a1aa;
             --font-heading: 'Syne', sans-serif;
             --font-body: 'Inter', sans-serif;
-            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         * {
@@ -46,7 +47,7 @@
             width: 90%;
             max-width: 1100px;
             margin: 0 auto;
-            padding: 90px 0;
+            padding: 100px 0;
         }
 
         .btn {
@@ -67,16 +68,27 @@
         .btn:hover {
             background-color: transparent;
             color: var(--primary);
-            box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+            box-shadow: 0 0 25px rgba(212, 175, 55, 0.3);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--text-light);
+            border: 2px solid #27272a;
+        }
+
+        .btn-outline:hover {
+            border-color: var(--primary);
+            color: var(--primary);
         }
 
         .section-title {
             font-family: var(--font-heading);
-            font-size: 2.8rem;
+            font-size: 3rem;
             font-weight: 800;
             text-transform: uppercase;
             margin-bottom: 50px;
-            line-height: 1.1;
+            line-height: 1;
             letter-spacing: -1px;
         }
 
@@ -90,26 +102,27 @@
             display: flex;
             align-items: center;
             position: relative;
-            background: linear-gradient(rgba(8, 8, 8, 0.85), rgba(8, 8, 8, 0.95)), 
+            background: linear-gradient(rgba(9, 9, 11, 0.85), rgba(9, 9, 11, 0.98)), 
                         url('https://images.unsplash.com/photo-1503951914875-452162b0f3f1?q=80&w=1200') no-repeat center center/cover;
         }
 
         .hero-content {
-            max-width: 750px;
+            max-width: 800px;
         }
 
         .hero h1 {
             font-family: var(--font-heading);
-            font-size: 4.5rem;
+            font-size: 5rem;
             font-weight: 800;
-            line-height: 1.05;
+            line-height: 0.95;
             text-transform: uppercase;
             margin-bottom: 25px;
-            letter-spacing: -2px;
+            letter-spacing: -3px;
         }
 
         .hero h1 span {
             color: var(--primary);
+            display: block;
         }
 
         .hero p {
@@ -119,10 +132,16 @@
             max-width: 600px;
         }
 
+        .hero-cta-group {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
         /* --- SERVICES SECTION --- */
         .services {
-            background-color: #030303;
-            border-top: 1px solid #111;
+            background-color: #020202;
+            border-top: 1px solid #18181b;
         }
 
         .services-grid {
@@ -133,8 +152,8 @@
 
         .service-card {
             background-color: var(--bg-card);
-            padding: 45px 35px;
-            border: 1px solid #1c1c1c;
+            padding: 50px 40px;
+            border: 1px solid #27272a;
             transition: var(--transition);
             display: flex;
             flex-direction: column;
@@ -144,19 +163,20 @@
         .service-card:hover {
             border-color: var(--primary);
             transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.7);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
 
         .service-name {
             font-family: var(--font-heading);
-            font-size: 1.6rem;
+            font-size: 1.75rem;
             text-transform: uppercase;
             margin-bottom: 10px;
+            letter-spacing: -0.5px;
         }
 
         .service-price {
             font-family: var(--font-heading);
-            font-size: 2.2rem;
+            font-size: 2.5rem;
             color: var(--primary);
             font-weight: 800;
             margin-bottom: 20px;
@@ -171,24 +191,19 @@
         .why-us-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 40px;
+            gap: 50px;
         }
 
         .why-card h3 {
             font-family: var(--font-heading);
-            font-size: 1.4rem;
+            font-size: 1.5rem;
             text-transform: uppercase;
             margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-            gap: 15px;
+            letter-spacing: -0.5px;
         }
 
-        .why-card h3::before {
-            content: '///';
+        .why-card h3 span {
             color: var(--primary);
-            font-size: 1.2rem;
-            letter-spacing: -2px;
         }
 
         .why-card p {
@@ -198,7 +213,7 @@
 
         /* --- TESTIMONIALS SECTION --- */
         .testimonials {
-            background-color: #030303;
+            background-color: #020202;
         }
 
         .testi-grid {
@@ -209,109 +224,129 @@
 
         .testi-card {
             background-color: var(--bg-card);
-            padding: 45px;
+            padding: 50px;
             border-left: 3px solid var(--primary);
         }
 
         .testi-text {
             font-style: italic;
-            font-size: 1.15rem;
-            margin-bottom: 25px;
-            color: #e0e0e0;
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            color: #e4e4e7;
+            line-height: 1.7;
         }
 
         .testi-author {
             font-family: var(--font-heading);
             text-transform: uppercase;
             font-size: 0.95rem;
-            letter-spacing: 1px;
+            letter-spacing: 2px;
             color: var(--primary);
         }
 
         /* --- FINAL CTA SECTION --- */
         .cta-section {
             text-align: center;
-            background: linear-gradient(rgba(8,8,8,0.9), rgba(8,8,8,0.9)), 
+            background: linear-gradient(rgba(9,9,11,0.92), rgba(9,9,11,0.92)), 
                         url('https://images.unsplash.com/photo-1585747860715-2ba37e788b70?q=80&w=1200') no-repeat center center/cover;
-            padding: 120px 0;
-            border-top: 1px solid #1a1a1a;
+            padding: 140px 0;
+            border-top: 1px solid #18181b;
         }
 
         .cta-section h2 {
             font-family: var(--font-heading);
-            font-size: 3.8rem;
+            font-size: 4rem;
             text-transform: uppercase;
-            margin-bottom: 20px;
-            line-height: 1.1;
+            margin-bottom: 25px;
+            line-height: 1;
+            letter-spacing: -2px;
         }
 
         .cta-section p {
             color: var(--text-muted);
             max-width: 650px;
-            margin: 0 auto 45px auto;
-            font-size: 1.25rem;
+            margin: 0 auto 50px auto;
+            font-size: 1.3rem;
         }
 
-        /* --- STICKY WHATSAPP BUTTON --- */
-        .whatsapp-sticky {
+        /* --- STICKY SOCIAL BUTTONS (CONVERSION DRIVERS) --- */
+        .sticky-container {
             position: fixed;
             bottom: 30px;
             right: 30px;
-            background-color: #25d366;
-            color: white;
-            padding: 16px 28px;
-            border-radius: 4px; /* Boxy Hipster Style */
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            z-index: 999;
+        }
+
+        .sticky-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 16px 24px;
+            border-radius: 4px; /* Minimalist Boxy Hipster Style */
             font-family: var(--font-heading);
             font-weight: 800;
             text-transform: uppercase;
             text-decoration: none;
+            font-size: 0.85rem;
             letter-spacing: 0.5px;
-            font-size: 0.9rem;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            z-index: 999;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
             transition: var(--transition);
+            color: #ffffff;
         }
 
-        .whatsapp-sticky:hover {
+        .sticky-btn:hover {
             transform: translateY(-3px);
-            box-shadow: 0 15px 35px rgba(37, 211, 102, 0.4);
+        }
+
+        .sticky-whatsapp {
+            background-color: #25d366;
+        }
+        .sticky-whatsapp:hover {
+            box-shadow: 0 15px 30px rgba(37, 211, 102, 0.3);
+        }
+
+        .sticky-instagram {
+            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+        }
+        .sticky-instagram:hover {
+            box-shadow: 0 15px 30px rgba(220, 39, 67, 0.3);
         }
 
         /* --- FOOTER --- */
         footer {
             background-color: #000000;
-            padding: 40px 0;
+            padding: 50px 0;
             text-align: center;
             font-size: 0.85rem;
-            color: #444;
-            border-top: 1px solid #111;
-        }
-
-        footer a {
-            color: var(--text-muted);
-            text-decoration: none;
-            transition: var(--transition);
-        }
-
-        footer a:hover {
-            color: var(--primary);
+            color: #3f3f46;
+            border-top: 1px solid #18181b;
         }
 
         /* --- RESPONSIVE DESIGN --- */
         @media (max-width: 768px) {
-            .hero h1 { font-size: 3rem; }
-            .section-title { font-size: 2.2rem; }
-            .cta-section h2 { font-size: 2.5rem; }
-            .container { padding: 60px 0; }
-            .whatsapp-sticky {
+            .hero h1 { font-size: 3.2rem; letter-spacing: -1px; }
+            .section-title { font-size: 2.3rem; }
+            .cta-section h2 { font-size: 2.6rem; }
+            .container { padding: 70px 0; }
+            .hero-cta-group { flex-direction: column; width: 100%; }
+            .hero-cta-group .btn { text-align: center; width: 100%; }
+            .sticky-container {
                 bottom: 20px;
                 right: 20px;
-                padding: 14px 22px;
-                font-size: 0.8rem;
+                left: 20px;
+                flex-direction: row;
             }
+            .sticky-btn {
+                flex: 1;
+                padding: 14px 10px;
+                font-size: 0.75rem;
+                gap: 6px;
+            }
+            body { padding-bottom: 60px; } /* Beri ruang untuk sticky di mobile */
         }
     </style>
 </head>
@@ -321,17 +356,20 @@
     <section class="hero">
         <div class="container">
             <div class="hero-content">
-                <h1>Layanan Eksklusif. <br>Gaya <span>Seterusnya Anda.</span></h1>
-                <p>Di The Kerabat, kami tidak sekadar memotong rambut. Kami membina komuniti dan memastikan setiap lelaki yang melangkah keluar membawa karisma dan ketajaman gaya yang tersendiri.</p>
-                <a href="#servis" class="btn">Sertai Kerabat & Tempah Slot</a>
+                <h1>Lebih Daripada Gunting. <br>Ini <span>Martabat Lelaki.</span></h1>
+                <p>Di The Kerabat, kami mengembalikan tradisi kekemasan maskulin sejati. Setiap potong adalah hasil kerja teliti demi memastikan karisma anda berada pada tahap tertinggi.</p>
+                <div class="hero-cta-group">
+                    <a href="#servis" class="btn">Lihat Servis & Booking</a>
+                    <a href="https://www.instagram.com/the.kerabat/" target="_blank" class="btn btn-outline">Eksplor Instagram</a>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- 2. SERVICES SECTION -->
+    <!-- 2. SERVIS & HARGA SECTION -->
     <section id="servis" class="services">
         <div class="container">
-            <h2 class="section-title">Menu <span>Servis & Ritual</span></h2>
+            <h2 class="section-title">Menu <span>Grooming</span></h2>
             <div class="services-grid">
                 
                 <!-- Card 1 -->
@@ -340,70 +378,70 @@
                         <div class="service-name">The Kerabat Cut</div>
                         <div class="service-price">RM35</div>
                     </div>
-                    <div class="service-desc">Guntingan rambut premium mengikut kesesuaian bentuk kepala, konsultasi gaya, cuci rambut segar, dan penggayaan pomade terbaik.</div>
+                    <div class="service-desc">Guntingan rambut premium mengikut kesesuaian bentuk kepala, cuci rambut segar, dan penggayaan pomade eksklusif.</div>
                 </div>
 
                 <!-- Card 2 -->
                 <div class="service-card">
                     <div>
-                        <div class="service-name">Royal Beard Trim</div>
+                        <div class="service-name">Beard Detailing & Razor Shave</div>
                         <div class="service-price">RM25</div>
                     </div>
-                    <div class="service-desc">Sesi merapikan jambang dan misai menggunakan pisau cukur lurus klasik (straight razor) serta balutan handuk panas.</div>
+                    <div class="service-desc">Pencukuran dan perapian jambang menggunakan pisau cukur lurus klasik bersama balutan tuala panas yang menenangkan.</div>
                 </div>
 
                 <!-- Card 3 -->
                 <div class="service-card">
                     <div>
-                        <div class="service-name">The Full Treatment</div>
+                        <div class="service-name">Royal Treatment (Combo)</div>
                         <div class="service-price">RM55</div>
                     </div>
-                    <div class="service-desc">Pakej premium lengkap: Guntingan rambut signature, pengemasan jambang, urutan kepala rileksasi, dan cucian premium.</div>
+                    <div class="service-desc">Gabungan pakej potong rambut premium, perapian jambang, urutan kepala rileksasi, dan rawatan tonik rambut.</div>
                 </div>
 
             </div>
         </div>
     </section>
 
-    <!-- 3. WHY CHOOSE US SECTION -->
+    <!-- 3. KENAPA PILIH KAMI SECTION -->
     <section class="why-us">
         <div class="container">
-            <h2 class="section-title">Kenapa Pilih <span>The Kerabat?</span></h2>
+            <h2 class="section-title">Kenapa Menyertai <span>The Kerabat?</span></h2>
             <div class="why-us-grid">
                 
                 <div class="why-card">
-                    <h3>Sentuhan Profesional</h3>
-                    <p>Barber kami terlatih bukan sahaja pada teknikal potongan, malah peka terhadap trend moden dan kesesuaian personaliti anda.</p>
+                    <h3><span>01 //</span> Barber Berkepakaran</h3>
+                    <p>Barber kami tidak melakukan potongan secara sembarangan. Setiap gaya dianalisis mengikut jenis rambut dan tekstur peribadi anda.</p>
                 </div>
 
                 <div class="why-card">
-                    <h3>Suasana Komuniti</h3>
-                    <p>Lebih daripada sekadar kedai gunting. Ruang kami direka dengan estetik hipster minimalis yang selesa untuk anda bersantai.</p>
+                    <h3><span>02 //</span> Estetik & Vibe Eksklusif</h3>
+                    <p>Ruang potong yang selesa dengan atmosfera hipster moden yang maskulin, direka khas untuk tempat anda berehat.</p>
                 </div>
 
                 <div class="why-card">
-                    <h3>Produk Terpilih</h3>
-                    <p>Setiap minyak jambang, tonik rambut, dan pomade dipilih rapi bagi memastikan kesihatan kulit kepala dan rambut anda kekal optimum.</p>
+                    <h3><span>03 //</span> Produk Gred Premium</h3>
+                    <p>Kami hanya menggunakan barangan penjagaan rambut dan kulit kepala berkualiti tinggi yang mengekalkan kesihatan jangka panjang.</p>
                 </div>
 
             </div>
         </div>
     </section>
 
-    <!-- 4. TESTIMONIALS SECTION -->
+    <!-- 4. TESTIMONI SECTION -->
     <section class="testimonials">
         <div class="container">
-            <h2 class="section-title">Suara <span>Kerabat Kami</span></h2>
+            <h2 class="section-title">Apa Kata <span>Brotherhood Kami</span></h2>
             <div class="testi-grid">
                 
                 <div class="testi-card">
-                    <div class="testi-text">"Kekemasan fade dia memang terbaik. Kedai selesa, lagu pun best. Dah jadi tempat wajib setiap dua minggu."</div>
+                    <div class="testi-text">"Paling puas hati dengan hasil line up dan fade dia. Kemas, sharp, dan barber sangat perinci dalam kerja."</div>
                     <div class="testi-author">- Hazim F.</div>
                 </div>
 
                 <div class="testi-card">
-                    <div class="testi-text">"Servis layan handuk panas masa trim jambang memang premium abis. Berbaloi dengan harga dan layanan."</div>
-                    <div class="testi-author">- Shahrul Azwan</div>
+                    <div class="testi-text">"Vibe kedai terbaik. Pakej tuala panas dia memang berbaloi, rasa macam premium treatment tapi harga sangat berpatutan."</div>
+                    <div class="testi-author">- Shahrul Nizam</div>
                 </div>
 
             </div>
@@ -413,35 +451,42 @@
     <!-- 5. FINAL CTA SECTION -->
     <section class="cta-section">
         <div class="container">
-            <h2>Masa Untuk Segarkan Penampilan?</h2>
-            <p>Jangan biar gaya anda terbiar tanpa penjagaan. Amankan slot anda hari ini di The Kerabat dan rasai sendiri perbezaannya.</p>
-            <button class="btn" onclick="openWhatsApp()">Tempah Slot Sekarang</button>
+            <h2>Masa Untuk Segarkan Gaya Anda?</h2>
+            <p>Jangan biarkan rambut dan jambang yang tidak terurus merosakkan keyakinan diri anda. Tempah slot anda bersama The Kerabat hari ini.</p>
+            <button class="btn" onclick="redirectToWhatsApp()">Tempah Slot Sekarang</button>
         </div>
     </section>
 
     <!-- FOOTER -->
     <footer>
-        <p>&copy; 2026 <a href="https://www.instagram.com/the.kerabat/" target="_blank">The Kerabat</a>. All Rights Reserved. Crafted for The Modern Gentlemen.</p>
+        <p>&copy; 2026 The Kerabat. All Rights Reserved. Crafted for the Modern Gentlemen.</p>
     </footer>
 
-    <!-- STICKY WHATSAPP BUTTON -->
-    <a href="#" class="whatsapp-sticky" onclick="openWhatsApp(event)">
-        <span style="font-size: 1.1rem;">⚡</span> Hubungi Kami
-    </a>
+    <!-- STICKY CONVERSION CONTAINER -->
+    <div class="sticky-container">
+        <!-- Instagram Link -->
+        <a href="https://www.instagram.com/the.kerabat/" target="_blank" class="sticky-btn sticky-instagram">
+            <span>📸</span> Instagram
+        </a>
+        <!-- WhatsApp Link -->
+        <a href="#" class="sticky-btn sticky-whatsapp" onclick="redirectToWhatsApp(event)">
+            <span>💬</span> Slot Booking
+        </a>
+    </div>
 
     <!-- --- VANILLA JAVASCRIPT --- -->
     <script>
-        // Sila tukar nombor telefon di bawah kepada nombor kedai anda yang betul
+        // Sila tukar nombor telefon WhatsApp perniagaan anda di bawah ini
         const WHATSAPP_NUMBER = "60123456789"; 
-        const MESSAGE_TEMPLATE = "Salam The Kerabat, saya nak tempah slot untuk gunting rambut. Ada kekosongan bila ya?";
+        const DEFAULT_MESSAGE = "Salam The Kerabat, saya nak tempah slot untuk potong rambut. Ada kekosongan waktu terdekat?";
 
-        function openWhatsApp(event) {
-            if(event) event.preventDefault(); // Mengelakkan pautan lompat secara lalai
+        function redirectToWhatsApp(event) {
+            if(event) event.preventDefault(); // Mengelakkan tindakan sauh (anchor link) lalai
             
-            const encodedMessage = encodeURIComponent(MESSAGE_TEMPLATE);
-            const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodedMessage}`;
+            const encodedMessage = encodeURIComponent(DEFAULT_MESSAGE);
+            const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodedMessage}`;
             
-            window.open(url, '_blank');
+            window.open(whatsappUrl, '_blank');
         }
     </script>
 
