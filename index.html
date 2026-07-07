@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Auto Teknoloji Auto Accessories | Barbershop & Grooming Premium</title>
+    <title>The Kerabat | Barbershop & Grooming Premium</title>
     
-    <!-- Google Fonts: Syne (Bold/Hipster) & Inter (Minimalis) -->
+    <!-- Google Fonts: Syne (Hipster/Bold) & Inter (Minimalis) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Syne:wght@700;800&display=swap" rel="stylesheet">
@@ -13,11 +13,11 @@
     <style>
         /* --- VANILLA CSS VARIABLES & RESET --- */
         :root {
-            --bg-dark: #0a0a0a;
-            --bg-card: #141414;
-            --primary: #ffaa00; /* Kuning/Oranye Neon Industrial/Otomotif */
+            --bg-dark: #080808;
+            --bg-card: #121212;
+            --primary: #d4af37; /* Emas Dull/Matte untuk vibe 'Kerabat' yang Premium & Maskulin */
             --text-light: #ffffff;
-            --text-muted: #a0a0a0;
+            --text-muted: #8a8a8a;
             --font-heading: 'Syne', sans-serif;
             --font-body: 'Inter', sans-serif;
             --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
@@ -67,7 +67,7 @@
         .btn:hover {
             background-color: transparent;
             color: var(--primary);
-            box-shadow: 0 0 20px rgba(255, 170, 0, 0.4);
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
         }
 
         .section-title {
@@ -82,10 +82,6 @@
 
         .section-title span {
             color: var(--primary);
-            display: block;
-            font-size: 1.5rem;
-            letter-spacing: 3px;
-            margin-top: 5px;
         }
 
         /* --- HERO SECTION --- */
@@ -94,16 +90,8 @@
             display: flex;
             align-items: center;
             position: relative;
-            background: linear-gradient(rgba(10, 10, 10, 0.8), rgba(10, 10, 10, 0.95)), 
+            background: linear-gradient(rgba(8, 8, 8, 0.85), rgba(8, 8, 8, 0.95)), 
                         url('https://images.unsplash.com/photo-1503951914875-452162b0f3f1?q=80&w=1200') no-repeat center center/cover;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0; right: 0; bottom: 0; left: 0;
-            background: radial-gradient(circle at 80% 20%, rgba(255, 170, 0, 0.1), transparent 50%);
-            pointer-events: none;
         }
 
         .hero-content {
@@ -122,8 +110,6 @@
 
         .hero h1 span {
             color: var(--primary);
-            -webkit-text-stroke: 1px var(--primary);
-            -webkit-text-fill-color: transparent;
         }
 
         .hero p {
@@ -135,7 +121,7 @@
 
         /* --- SERVICES SECTION --- */
         .services {
-            background-color: #050505;
+            background-color: #030303;
             border-top: 1px solid #111;
         }
 
@@ -148,33 +134,17 @@
         .service-card {
             background-color: var(--bg-card);
             padding: 45px 35px;
-            border: 1px solid #222;
+            border: 1px solid #1c1c1c;
             transition: var(--transition);
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .service-card::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 3px;
-            background: var(--primary);
-            transform: scaleX(0);
-            transition: var(--transition);
-            transform-origin: left;
-        }
-
-        .service-card:hover::before {
-            transform: scaleX(1);
         }
 
         .service-card:hover {
-            border-color: #333;
+            border-color: var(--primary);
             transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.7);
         }
 
         .service-name {
@@ -182,7 +152,6 @@
             font-size: 1.6rem;
             text-transform: uppercase;
             margin-bottom: 10px;
-            letter-spacing: -0.5px;
         }
 
         .service-price {
@@ -199,10 +168,6 @@
         }
 
         /* --- WHY US SECTION --- */
-        .why-us {
-            position: relative;
-        }
-
         .why-us-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -220,9 +185,10 @@
         }
 
         .why-card h3::before {
-            content: '▪';
+            content: '///';
             color: var(--primary);
-            font-size: 1.8rem;
+            font-size: 1.2rem;
+            letter-spacing: -2px;
         }
 
         .why-card p {
@@ -232,7 +198,7 @@
 
         /* --- TESTIMONIALS SECTION --- */
         .testimonials {
-            background-color: #050505;
+            background-color: #030303;
         }
 
         .testi-grid {
@@ -244,8 +210,7 @@
         .testi-card {
             background-color: var(--bg-card);
             padding: 45px;
-            border-left: 4px solid var(--primary);
-            position: relative;
+            border-left: 3px solid var(--primary);
         }
 
         .testi-text {
@@ -266,10 +231,10 @@
         /* --- FINAL CTA SECTION --- */
         .cta-section {
             text-align: center;
-            background: linear-gradient(rgba(10,10,10,0.9), rgba(10,10,10,0.9)), 
+            background: linear-gradient(rgba(8,8,8,0.9), rgba(8,8,8,0.9)), 
                         url('https://images.unsplash.com/photo-1585747860715-2ba37e788b70?q=80&w=1200') no-repeat center center/cover;
             padding: 120px 0;
-            border-top: 1px solid #222;
+            border-top: 1px solid #1a1a1a;
         }
 
         .cta-section h2 {
@@ -278,7 +243,6 @@
             text-transform: uppercase;
             margin-bottom: 20px;
             line-height: 1.1;
-            letter-spacing: -1px;
         }
 
         .cta-section p {
@@ -296,14 +260,14 @@
             background-color: #25d366;
             color: white;
             padding: 16px 28px;
-            border-radius: 4px; /* Minimalist Boxy Hipster Style */
+            border-radius: 4px; /* Boxy Hipster Style */
             font-family: var(--font-heading);
             font-weight: 800;
             text-transform: uppercase;
             text-decoration: none;
             letter-spacing: 0.5px;
             font-size: 0.9rem;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
             display: flex;
             align-items: center;
             gap: 12px;
@@ -324,7 +288,16 @@
             font-size: 0.85rem;
             color: #444;
             border-top: 1px solid #111;
-            font-family: var(--font-body);
+        }
+
+        footer a {
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        footer a:hover {
+            color: var(--primary);
         }
 
         /* --- RESPONSIVE DESIGN --- */
@@ -348,9 +321,9 @@
     <section class="hero">
         <div class="container">
             <div class="hero-content">
-                <h1>Bukan Sekadar Potong. <br>Ini <span>Modifikasi Karakter.</span></h1>
-                <p>Di Auto Teknoloji Auto Accessories, kami memperlakukan gaya rambut Anda layaknya karya seni mesin berperforma tinggi. Presisi tinggi, tajam, dan maskulin maksimal.</p>
-                <a href="#servis" class="btn">Pilih Paket & Pesan Slot</a>
+                <h1>Layanan Eksklusif. <br>Gaya <span>Seterusnya Anda.</span></h1>
+                <p>Di The Kerabat, kami tidak sekadar memotong rambut. Kami membina komuniti dan memastikan setiap lelaki yang melangkah keluar membawa karisma dan ketajaman gaya yang tersendiri.</p>
+                <a href="#servis" class="btn">Sertai Kerabat & Tempah Slot</a>
             </div>
         </div>
     </section>
@@ -358,34 +331,34 @@
     <!-- 2. SERVICES SECTION -->
     <section id="servis" class="services">
         <div class="container">
-            <h2 class="section-title">Menu Servis <span>Grooming & Tune-Up</span></h2>
+            <h2 class="section-title">Menu <span>Servis & Ritual</span></h2>
             <div class="services-grid">
                 
                 <!-- Card 1 -->
                 <div class="service-card">
                     <div>
-                        <div class="service-name">The Standard Tune-Up</div>
+                        <div class="service-name">The Kerabat Cut</div>
                         <div class="service-price">RM35</div>
                     </div>
-                    <div class="service-desc">Potongan rambut premium dengan konsultasi bentuk wajah, cuci rambut komprehensif, dan aplikasi pomade lokal terbaik.</div>
+                    <div class="service-desc">Guntingan rambut premium mengikut kesesuaian bentuk kepala, konsultasi gaya, cuci rambut segar, dan penggayaan pomade terbaik.</div>
                 </div>
 
                 <!-- Card 2 -->
                 <div class="service-card">
                     <div>
-                        <div class="service-name">Beard & Mustache Detailing</div>
+                        <div class="service-name">Royal Beard Trim</div>
                         <div class="service-price">RM25</div>
                     </div>
-                    <div class="service-desc">Perapian jambang dan kumis menggunakan pisau cukur klasik (straight razor) lengkap dengan kompres handuk panas.</div>
+                    <div class="service-desc">Sesi merapikan jambang dan misai menggunakan pisau cukur lurus klasik (straight razor) serta balutan handuk panas.</div>
                 </div>
 
                 <!-- Card 3 -->
                 <div class="service-card">
                     <div>
-                        <div class="service-name">The Full Engine Overhaul</div>
+                        <div class="service-name">The Full Treatment</div>
                         <div class="service-price">RM55</div>
                     </div>
-                    <div class="service-desc">Pakej komplit maskulin: Guntingan rambut premium, detailing jambang, pijat kepala rileksasi, dan masker wajah anti kusam.</div>
+                    <div class="service-desc">Pakej premium lengkap: Guntingan rambut signature, pengemasan jambang, urutan kepala rileksasi, dan cucian premium.</div>
                 </div>
 
             </div>
@@ -395,22 +368,22 @@
     <!-- 3. WHY CHOOSE US SECTION -->
     <section class="why-us">
         <div class="container">
-            <h2 class="section-title">Kenapa Harus <span>Auto Teknoloji?</span></h2>
+            <h2 class="section-title">Kenapa Pilih <span>The Kerabat?</span></h2>
             <div class="why-us-grid">
                 
                 <div class="why-card">
-                    <h3>Mekanik Barber Berlisensi</h3>
-                    <p>Barber kami bukan sekadar pemotong rambut, mereka adalah seniman terlatih yang memahami struktur anatomi kepala dan tren hipster terkini.</p>
+                    <h3>Sentuhan Profesional</h3>
+                    <p>Barber kami terlatih bukan sahaja pada teknikal potongan, malah peka terhadap trend moden dan kesesuaian personaliti anda.</p>
                 </div>
 
                 <div class="why-card">
-                    <h3>Vibe Industrial Modern</h3>
-                    <p>Setup interior bertema maskulin industrial dengan musik yang pas dikurasi khusus untuk kenyamanan nongkrong Anda.</p>
+                    <h3>Suasana Komuniti</h3>
+                    <p>Lebih daripada sekadar kedai gunting. Ruang kami direka dengan estetik hipster minimalis yang selesa untuk anda bersantai.</p>
                 </div>
 
                 <div class="why-card">
-                    <h3>Produk Aksesoris Premium</h3>
-                    <p>Kami hanya menggunakan tonik, pomade, dan produk perawatan premium untuk memastikan rambut Anda tetap sehat dan kokoh.</p>
+                    <h3>Produk Terpilih</h3>
+                    <p>Setiap minyak jambang, tonik rambut, dan pomade dipilih rapi bagi memastikan kesihatan kulit kepala dan rambut anda kekal optimum.</p>
                 </div>
 
             </div>
@@ -420,17 +393,17 @@
     <!-- 4. TESTIMONIALS SECTION -->
     <section class="testimonials">
         <div class="container">
-            <h2 class="section-title">Feedback <span>Pelanggan</span></h2>
+            <h2 class="section-title">Suara <span>Kerabat Kami</span></h2>
             <div class="testi-grid">
                 
                 <div class="testi-card">
-                    <div class="testi-text">"Potongan fade-nya gila, presisi banget! Tempatnya punya vibe cowok abis, kerasa eksklusif tapi tetep santai."</div>
-                    <div class="testi-author">- Adrian K.</div>
+                    <div class="testi-text">"Kekemasan fade dia memang terbaik. Kedai selesa, lagu pun best. Dah jadi tempat wajib setiap dua minggu."</div>
+                    <div class="testi-author">- Hazim F.</div>
                 </div>
 
                 <div class="testi-card">
-                    <div class="testi-text">"Pakej Overhaul-nya juara. Handuk panas pas cukuran jambang bikin rileks maksimal. Worth every ringgit."</div>
-                    <div class="testi-author">- Firdaus R.</div>
+                    <div class="testi-text">"Servis layan handuk panas masa trim jambang memang premium abis. Berbaloi dengan harga dan layanan."</div>
+                    <div class="testi-author">- Shahrul Azwan</div>
                 </div>
 
             </div>
@@ -440,30 +413,30 @@
     <!-- 5. FINAL CTA SECTION -->
     <section class="cta-section">
         <div class="container">
-            <h2>Rambut Berantakan Mengurangi Karisma.</h2>
-            <p>Jangan tunggu sampai penampilan Anda merusak impresi pertama orang lain. Amankan slot Anda sekarang dan keluar dari kedai kami dengan kepercayaan diri baru.</p>
-            <button class="btn" onclick="openWhatsApp()">Booking Slot Sekarang</button>
+            <h2>Masa Untuk Segarkan Penampilan?</h2>
+            <p>Jangan biar gaya anda terbiar tanpa penjagaan. Amankan slot anda hari ini di The Kerabat dan rasai sendiri perbezaannya.</p>
+            <button class="btn" onclick="openWhatsApp()">Tempah Slot Sekarang</button>
         </div>
     </section>
 
     <!-- FOOTER -->
     <footer>
-        <p>&copy; 2026 Auto Teknoloji Auto Accessories. All Rights Reserved. Engineered for Modern Gentlemen.</p>
+        <p>&copy; 2026 <a href="https://www.instagram.com/the.kerabat/" target="_blank">The Kerabat</a>. All Rights Reserved. Crafted for The Modern Gentlemen.</p>
     </footer>
 
     <!-- STICKY WHATSAPP BUTTON -->
     <a href="#" class="whatsapp-sticky" onclick="openWhatsApp(event)">
-        <span style="font-size: 1.2rem;">⚡</span> Hubungi Barber Kami
+        <span style="font-size: 1.1rem;">⚡</span> Hubungi Kami
     </a>
 
     <!-- --- VANILLA JAVASCRIPT --- -->
     <script>
-        // Silakan ubah nomor telepon dan isi template pesan sesuai kebutuhan Anda
+        // Sila tukar nombor telefon di bawah kepada nombor kedai anda yang betul
         const WHATSAPP_NUMBER = "60123456789"; 
-        const MESSAGE_TEMPLATE = "Halo Auto Teknoloji Barbershop, saya mau booking slot untuk potong rambut. Apakah ada jadwal kosong terdekat?";
+        const MESSAGE_TEMPLATE = "Salam The Kerabat, saya nak tempah slot untuk gunting rambut. Ada kekosongan bila ya?";
 
         function openWhatsApp(event) {
-            if(event) event.preventDefault(); // Mencegah fungsi lompat link standar
+            if(event) event.preventDefault(); // Mengelakkan pautan lompat secara lalai
             
             const encodedMessage = encodeURIComponent(MESSAGE_TEMPLATE);
             const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodedMessage}`;
