@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auto Teknoloji Auto Accessories | Barbershop & Grooming Premium</title>
+    
+    <!-- Google Fonts: Syne (Bold/Hipster) & Inter (Minimalis) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+
+    <style>
+        /* --- VANILLA CSS VARIABLES & RESET --- */
+        :root {
+            --bg-dark: #0a0a0a;
+            --bg-card: #141414;
+            --primary: #ffaa00; /* Kuning/Oranye Neon Industrial/Otomotif */
+            --text-light: #ffffff;
+            --text-muted: #a0a0a0;
+            --font-heading: 'Syne', sans-serif;
+            --font-body: 'Inter', sans-serif;
+            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* --- UTILITIES --- */
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 90px 0;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--primary);
+            color: #000000;
+            padding: 18px 36px;
+            font-family: var(--font-heading);
+            font-weight: 800;
+            text-transform: uppercase;
+            text-decoration: none;
+            letter-spacing: 1px;
+            border: 2px solid var(--primary);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .btn:hover {
+            background-color: transparent;
+            color: var(--primary);
+            box-shadow: 0 0 20px rgba(255, 170, 0, 0.4);
+        }
+
+        .section-title {
+            font-family: var(--font-heading);
+            font-size: 2.8rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            margin-bottom: 50px;
+            line-height: 1.1;
+            letter-spacing: -1px;
+        }
+
+        .section-title span {
+            color: var(--primary);
+            display: block;
+            font-size: 1.5rem;
+            letter-spacing: 3px;
+            margin-top: 5px;
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            min-height: 95vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            background: linear-gradient(rgba(10, 10, 10, 0.8), rgba(10, 10, 10, 0.95)), 
+                        url('https://images.unsplash.com/photo-1503951914875-452162b0f3f1?q=80&w=1200') no-repeat center center/cover;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0; right: 0; bottom: 0; left: 0;
+            background: radial-gradient(circle at 80% 20%, rgba(255, 170, 0, 0.1), transparent 50%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            max-width: 750px;
+        }
+
+        .hero h1 {
+            font-family: var(--font-heading);
+            font-size: 4.5rem;
+            font-weight: 800;
+            line-height: 1.05;
+            text-transform: uppercase;
+            margin-bottom: 25px;
+            letter-spacing: -2px;
+        }
+
+        .hero h1 span {
+            color: var(--primary);
+            -webkit-text-stroke: 1px var(--primary);
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            margin-bottom: 40px;
+            max-width: 600px;
+        }
+
+        /* --- SERVICES SECTION --- */
+        .services {
+            background-color: #050505;
+            border-top: 1px solid #111;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background-color: var(--bg-card);
+            padding: 45px 35px;
+            border: 1px solid #222;
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 3px;
+            background: var(--primary);
+            transform: scaleX(0);
+            transition: var(--transition);
+            transform-origin: left;
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .service-card:hover {
+            border-color: #333;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        .service-name {
+            font-family: var(--font-heading);
+            font-size: 1.6rem;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            letter-spacing: -0.5px;
+        }
+
+        .service-price {
+            font-family: var(--font-heading);
+            font-size: 2.2rem;
+            color: var(--primary);
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+
+        .service-desc {
+            color: var(--text-muted);
+            font-size: 1rem;
+        }
+
+        /* --- WHY US SECTION --- */
+        .why-us {
+            position: relative;
+        }
+
+        .why-us-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+        }
+
+        .why-card h3 {
+            font-family: var(--font-heading);
+            font-size: 1.4rem;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .why-card h3::before {
+            content: '▪';
+            color: var(--primary);
+            font-size: 1.8rem;
+        }
+
+        .why-card p {
+            color: var(--text-muted);
+            font-size: 1rem;
+        }
+
+        /* --- TESTIMONIALS SECTION --- */
+        .testimonials {
+            background-color: #050505;
+        }
+
+        .testi-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .testi-card {
+            background-color: var(--bg-card);
+            padding: 45px;
+            border-left: 4px solid var(--primary);
+            position: relative;
+        }
+
+        .testi-text {
+            font-style: italic;
+            font-size: 1.15rem;
+            margin-bottom: 25px;
+            color: #e0e0e0;
+        }
+
+        .testi-author {
+            font-family: var(--font-heading);
+            text-transform: uppercase;
+            font-size: 0.95rem;
+            letter-spacing: 1px;
+            color: var(--primary);
+        }
+
+        /* --- FINAL CTA SECTION --- */
+        .cta-section {
+            text-align: center;
+            background: linear-gradient(rgba(10,10,10,0.9), rgba(10,10,10,0.9)), 
+                        url('https://images.unsplash.com/photo-1585747860715-2ba37e788b70?q=80&w=1200') no-repeat center center/cover;
+            padding: 120px 0;
+            border-top: 1px solid #222;
+        }
+
+        .cta-section h2 {
+            font-family: var(--font-heading);
+            font-size: 3.8rem;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            line-height: 1.1;
+            letter-spacing: -1px;
+        }
+
+        .cta-section p {
+            color: var(--text-muted);
+            max-width: 650px;
+            margin: 0 auto 45px auto;
+            font-size: 1.25rem;
+        }
+
+        /* --- STICKY WHATSAPP BUTTON --- */
+        .whatsapp-sticky {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25d366;
+            color: white;
+            padding: 16px 28px;
+            border-radius: 4px; /* Minimalist Boxy Hipster Style */
+            font-family: var(--font-heading);
+            font-weight: 800;
+            text-transform: uppercase;
+            text-decoration: none;
+            letter-spacing: 0.5px;
+            font-size: 0.9rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            z-index: 999;
+            transition: var(--transition);
+        }
+
+        .whatsapp-sticky:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(37, 211, 102, 0.4);
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background-color: #000000;
+            padding: 40px 0;
+            text-align: center;
+            font-size: 0.85rem;
+            color: #444;
+            border-top: 1px solid #111;
+            font-family: var(--font-body);
+        }
+
+        /* --- RESPONSIVE DESIGN --- */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 3rem; }
+            .section-title { font-size: 2.2rem; }
+            .cta-section h2 { font-size: 2.5rem; }
+            .container { padding: 60px 0; }
+            .whatsapp-sticky {
+                bottom: 20px;
+                right: 20px;
+                padding: 14px 22px;
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 1. HERO SECTION -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Bukan Sekadar Potong. <br>Ini <span>Modifikasi Karakter.</span></h1>
+                <p>Di Auto Teknoloji Auto Accessories, kami memperlakukan gaya rambut Anda layaknya karya seni mesin berperforma tinggi. Presisi tinggi, tajam, dan maskulin maksimal.</p>
+                <a href="#servis" class="btn">Pilih Paket & Pesan Slot</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. SERVICES SECTION -->
+    <section id="servis" class="services">
+        <div class="container">
+            <h2 class="section-title">Menu Servis <span>Grooming & Tune-Up</span></h2>
+            <div class="services-grid">
+                
+                <!-- Card 1 -->
+                <div class="service-card">
+                    <div>
+                        <div class="service-name">The Standard Tune-Up</div>
+                        <div class="service-price">RM35</div>
+                    </div>
+                    <div class="service-desc">Potongan rambut premium dengan konsultasi bentuk wajah, cuci rambut komprehensif, dan aplikasi pomade lokal terbaik.</div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="service-card">
+                    <div>
+                        <div class="service-name">Beard & Mustache Detailing</div>
+                        <div class="service-price">RM25</div>
+                    </div>
+                    <div class="service-desc">Perapian jambang dan kumis menggunakan pisau cukur klasik (straight razor) lengkap dengan kompres handuk panas.</div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="service-card">
+                    <div>
+                        <div class="service-name">The Full Engine Overhaul</div>
+                        <div class="service-price">RM55</div>
+                    </div>
+                    <div class="service-desc">Pakej komplit maskulin: Guntingan rambut premium, detailing jambang, pijat kepala rileksasi, dan masker wajah anti kusam.</div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. WHY CHOOSE US SECTION -->
+    <section class="why-us">
+        <div class="container">
+            <h2 class="section-title">Kenapa Harus <span>Auto Teknoloji?</span></h2>
+            <div class="why-us-grid">
+                
+                <div class="why-card">
+                    <h3>Mekanik Barber Berlisensi</h3>
+                    <p>Barber kami bukan sekadar pemotong rambut, mereka adalah seniman terlatih yang memahami struktur anatomi kepala dan tren hipster terkini.</p>
+                </div>
+
+                <div class="why-card">
+                    <h3>Vibe Industrial Modern</h3>
+                    <p>Setup interior bertema maskulin industrial dengan musik yang pas dikurasi khusus untuk kenyamanan nongkrong Anda.</p>
+                </div>
+
+                <div class="why-card">
+                    <h3>Produk Aksesoris Premium</h3>
+                    <p>Kami hanya menggunakan tonik, pomade, dan produk perawatan premium untuk memastikan rambut Anda tetap sehat dan kokoh.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. TESTIMONIALS SECTION -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title">Feedback <span>Pelanggan</span></h2>
+            <div class="testi-grid">
+                
+                <div class="testi-card">
+                    <div class="testi-text">"Potongan fade-nya gila, presisi banget! Tempatnya punya vibe cowok abis, kerasa eksklusif tapi tetep santai."</div>
+                    <div class="testi-author">- Adrian K.</div>
+                </div>
+
+                <div class="testi-card">
+                    <div class="testi-text">"Pakej Overhaul-nya juara. Handuk panas pas cukuran jambang bikin rileks maksimal. Worth every ringgit."</div>
+                    <div class="testi-author">- Firdaus R.</div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. FINAL CTA SECTION -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Rambut Berantakan Mengurangi Karisma.</h2>
+            <p>Jangan tunggu sampai penampilan Anda merusak impresi pertama orang lain. Amankan slot Anda sekarang dan keluar dari kedai kami dengan kepercayaan diri baru.</p>
+            <button class="btn" onclick="openWhatsApp()">Booking Slot Sekarang</button>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2026 Auto Teknoloji Auto Accessories. All Rights Reserved. Engineered for Modern Gentlemen.</p>
+    </footer>
+
+    <!-- STICKY WHATSAPP BUTTON -->
+    <a href="#" class="whatsapp-sticky" onclick="openWhatsApp(event)">
+        <span style="font-size: 1.2rem;">⚡</span> Hubungi Barber Kami
+    </a>
+
+    <!-- --- VANILLA JAVASCRIPT --- -->
+    <script>
+        // Silakan ubah nomor telepon dan isi template pesan sesuai kebutuhan Anda
+        const WHATSAPP_NUMBER = "60123456789"; 
+        const MESSAGE_TEMPLATE = "Halo Auto Teknoloji Barbershop, saya mau booking slot untuk potong rambut. Apakah ada jadwal kosong terdekat?";
+
+        function openWhatsApp(event) {
+            if(event) event.preventDefault(); // Mencegah fungsi lompat link standar
+            
+            const encodedMessage = encodeURIComponent(MESSAGE_TEMPLATE);
+            const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodedMessage}`;
+            
+            window.open(url, '_blank');
+        }
+    </script>
+
+</body>
+</html>
