@@ -3,474 +3,138 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Kerabat | Klasik. Moden. Maskulin.</title>
-    
-    <!-- Google Fonts: Syne & Inter untuk vibe Hipster Ultra-Bold & Clean -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Syne:wght@700;800&display=swap" rel="stylesheet">
-
-    <style>
-        /* --- VANILLA CSS VARIABLES & RESET --- */
-        :root {
-            --bg-dark: #09090b;
-            --bg-card: #141416;
-            --primary: #ffffff; /* Minimalist Bold White */
-            --accent: #e4e4e7;  /* Light Gray */
-            --text-muted: #71717a;
-            --border-color: #27272a;
-            --font-heading: 'Syne', sans-serif;
-            --font-body: 'Inter', sans-serif;
-            --transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            background-color: var(--bg-dark);
-            color: var(--primary);
-            font-family: var(--font-body);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        /* --- UTILITIES --- */
-        .container {
-            width: 90%;
-            max-width: 1050px;
-            margin: 0 auto;
-            padding: 100px 0;
-        }
-
-        .btn {
-            display: inline-block;
-            background-color: var(--primary);
-            color: #000000;
-            padding: 18px 36px;
-            font-family: var(--font-heading);
-            font-weight: 800;
-            text-transform: uppercase;
-            text-decoration: none;
-            letter-spacing: 1px;
-            border: 2px solid var(--primary);
-            cursor: pointer;
-            transition: var(--transition);
-        }
-
-        .btn:hover {
-            background-color: transparent;
-            color: var(--primary);
-            box-shadow: 0 0 25px rgba(255, 255, 255, 0.15);
-        }
-
-        .section-title {
-            font-family: var(--font-heading);
-            font-size: 3rem;
-            font-weight: 800;
-            text-transform: uppercase;
-            margin-bottom: 50px;
-            line-height: 1;
-            letter-spacing: -1.5px;
-        }
-
-        .section-title span {
-            color: var(--text-muted);
-            -webkit-text-stroke: 1px var(--text-muted);
-            -webkit-text-fill-color: transparent;
-        }
-
-        /* --- HERO SECTION --- */
-        .hero {
-            min-height: 95vh;
-            display: flex;
-            align-items: center;
-            position: relative;
-            background: linear-gradient(rgba(9, 9, 11, 0.85), rgba(9, 9, 11, 0.98)), 
-                        url('https://images.unsplash.com/photo-1503951914875-452162b0f3f1?q=80&w=1200') no-repeat center center/cover;
-        }
-
-        .hero-content {
-            max-width: 800px;
-        }
-
-        .hero h1 {
-            font-family: var(--font-heading);
-            font-size: 5rem;
-            font-weight: 800;
-            line-height: 0.95;
-            text-transform: uppercase;
-            margin-bottom: 25px;
-            letter-spacing: -3px;
-        }
-
-        .hero h1 span {
-            display: block;
-            color: #3f3f46;
-            -webkit-text-stroke: 1px #71717a;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .hero p {
-            font-size: 1.3rem;
-            color: #a1a1aa;
-            margin-bottom: 45px;
-            max-width: 600px;
-            font-weight: 400;
-        }
-
-        /* --- SERVICES SECTION --- */
-        .services {
-            background-color: #0c0c0e;
-            border-top: 1px solid var(--border-color);
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        .service-card {
-            background-color: var(--bg-card);
-            padding: 50px 40px;
-            border: 1px solid var(--border-color);
-            transition: var(--transition);
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .service-card:hover {
-            border-color: var(--primary);
-            transform: translateY(-4px);
-        }
-
-        .service-name {
-            font-family: var(--font-heading);
-            font-size: 1.7rem;
-            text-transform: uppercase;
-            margin-bottom: 8px;
-            letter-spacing: -0.5px;
-        }
-
-        .service-price {
-            font-family: var(--font-heading);
-            font-size: 2.3rem;
-            color: var(--primary);
-            font-weight: 800;
-            margin-bottom: 25px;
-        }
-
-        .service-desc {
-            color: #a1a1aa;
-            font-size: 1rem;
-        }
-
-        /* --- WHY US SECTION --- */
-        .why-us-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 50px;
-        }
-
-        .why-card h3 {
-            font-family: var(--font-heading);
-            font-size: 1.4rem;
-            text-transform: uppercase;
-            margin-bottom: 20px;
-            letter-spacing: -0.5px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .why-card h3::before {
-            content: ' ';
-            display: inline-block;
-            width: 8px;
-            height: 8px;
-            background-color: var(--primary);
-        }
-
-        .why-card p {
-            color: #a1a1aa;
-            font-size: 1rem;
-        }
-
-        /* --- TESTIMONIALS SECTION --- */
-        .testimonials {
-            background-color: #0c0c0e;
-            border-top: 1px solid var(--border-color);
-        }
-
-        .testi-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 30px;
-        }
-
-        .testi-card {
-            background-color: var(--bg-card);
-            padding: 50px;
-            border: 1px solid var(--border-color);
-        }
-
-        .testi-text {
-            font-style: italic;
-            font-size: 1.2rem;
-            margin-bottom: 30px;
-            color: var(--accent);
-            line-height: 1.7;
-        }
-
-        .testi-author {
-            font-family: var(--font-heading);
-            text-transform: uppercase;
-            font-size: 0.9rem;
-            letter-spacing: 2px;
-            font-weight: 700;
-        }
-
-        /* --- FINAL CTA SECTION --- */
-        .cta-section {
-            text-align: center;
-            background: linear-gradient(rgba(9,9,11,0.92), rgba(9,9,11,0.92)), 
-                        url('https://images.unsplash.com/photo-1585747860715-2ba37e788b70?q=80&w=1200') no-repeat center center/cover;
-            padding: 140px 0;
-            border-top: 1px solid var(--border-color);
-        }
-
-        .cta-section h2 {
-            font-family: var(--font-heading);
-            font-size: 4rem;
-            text-transform: uppercase;
-            margin-bottom: 25px;
-            line-height: 1;
-            letter-spacing: -2px;
-        }
-
-        .cta-section p {
-            color: #a1a1aa;
-            max-width: 650px;
-            margin: 0 auto 50px auto;
-            font-size: 1.3rem;
-        }
-
-        /* --- STICKY BUTTONS (WHATSAPP & INSTAGRAM) --- */
-        .sticky-container {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-            z-index: 999;
-        }
-
-        .sticky-btn {
-            padding: 15px 25px;
-            font-family: var(--font-heading);
-            font-weight: 800;
-            text-transform: uppercase;
-            text-decoration: none;
-            font-size: 0.85rem;
-            letter-spacing: 0.5px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-            transition: var(--transition);
-            border-radius: 2px;
-        }
-
-        .sticky-whatsapp {
-            background-color: #25d366;
-            color: #ffffff;
-        }
-
-        .sticky-instagram {
-            background-color: #ffffff;
-            color: #000000;
-        }
-
-        .sticky-btn:hover {
-            transform: translateY(-3px);
-        }
-
-        /* --- FOOTER --- */
-        footer {
-            background-color: #000000;
-            padding: 40px 0;
-            text-align: center;
-            font-size: 0.85rem;
-            color: #52525b;
-            border-top: 1px solid var(--border-color);
-        }
-
-        /* --- RESPONSIVE DESIGN --- */
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 3.2rem; }
-            .section-title { font-size: 2.4rem; }
-            .cta-section h2 { font-size: 2.6rem; }
-            .container { padding: 70px 0; }
-            .sticky-container {
-                bottom: 20px;
-                right: 20px;
-                left: 20px;
-                flex-direction: row;
-            }
-            .sticky-btn {
-                flex: 1;
-                justify-content: center;
-                padding: 14px;
-                font-size: 0.75rem;
-            }
-        }
-    </style>
+    <title>NexusLink - AI to Live Web Ecosystem</title>
+    <!-- Menggunakan Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
+<body class="bg-[#0B0F19] text-slate-200 font-sans antialiased selection:bg-emerald-500 selection:text-black">
 
-    <!-- 1. HERO SECTION -->
-    <section class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1>The Kerabat. <span>Darah Barber.</span></h1>
-                <p>Kami tidak sekadar memotong rambut. Di The Kerabat, setiap perincian adalah tradisi, gaya, dan ketajaman identiti maskulin sebenar yang eksklusif untuk anda.</p>
-                <a href="#servis" class="btn">Teroka Servis</a>
+    <!-- 1. PREMIUM HEADER -->
+    <header class="bg-[#0B0F19]/80 backdrop-blur-md border-b border-slate-800/60 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <!-- Logo Baharu & Unik -->
+            <div class="flex items-center space-x-2 font-black text-2xl tracking-wider text-white">
+                <span class="bg-gradient-to-r from-emerald-400 to-teal-500 bg-clip-text text-transparent">NEXUS</span><span>LINK</span>
             </div>
-        </div>
-    </section>
-
-    <!-- 2. SERVIS & HARGA SECTION -->
-    <section id="servis" class="services">
-        <div class="container">
-            <h2 class="section-title">Menu <span>Servis</span></h2>
-            <div class="services-grid">
-                
-                <!-- Card 1 -->
-                <div class="service-card">
-                    <div>
-                        <div class="service-name">Kerabat Haircut</div>
-                        <div class="service-price">RM35</div>
-                    </div>
-                    <div class="service-desc">Potongan rambut signature mengikut struktur kepala, cucian segar, dan kemasan penggayaan premium.</div>
-                </div>
-
-                <!-- Card 2 -->
-                <div class="service-card">
-                    <div>
-                        <div class="service-name">Beard & Shave</div>
-                        <div class="service-price">RM25</div>
-                    </div>
-                    <div class="service-desc">Kemasan dan pembentukan jambang menggunakan pisau cukur lurus tradisional bersama tuala suam.</div>
-                </div>
-
-                <!-- Card 3 -->
-                <div class="service-card">
-                    <div>
-                        <div class="service-name">The Royal Treatment</div>
-                        <div class="service-price">RM55</div>
-                    </div>
-                    <div class="service-desc">Pakej penuh bangsawan: Haircut eksklusif, detailing jambang, urutan kepala premium, dan rawatan kesegaran wajah.</div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- 3. KENAPA PILIH KAMI SECTION -->
-    <section class="why-us">
-        <div class="container">
-            <h2 class="section-title">Kenapa <span>The Kerabat?</span></h2>
-            <div class="why-us-grid">
-                
-                <div class="why-card">
-                    <h3>Ketukangan Gred Tinggi</h3>
-                    <p>Barber kami bekerja dengan ketelitian tinggi. Setiap garisan fade dan potongan dipastikan simetri dan tajam.</p>
-                </div>
-
-                <div class="why-card">
-                    <h3>Estetik Hipster Minimalis</h3>
-                    <p>Suasana ruang premium yang tenang, maskulin, dan bebas daripada kesibukan biasa—ruang khas untuk lelaki sejati beristirehat.</p>
-                </div>
-
-                <div class="why-card">
-                    <h3>Grooming Terpilih</h3>
-                    <p>Hanya menggunakan produk penjagaan rambut dan minyak jambang bertaraf premium demi mengekalkan kesihatan kulit kepala anda.</p>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- 4. TESTIMONI SECTION -->
-    <section class="testimonials">
-        <div class="container">
-            <h2 class="section-title">Suara <span>Kerabat</span></h2>
-            <div class="testi-grid">
-                
-                <div class="testi-card">
-                    <div class="testi-text">"Kerja kemas gila. Barber dekat sini betul-betul faham bentuk muka dan jenis rambut sebelum potong. Sangat recommend!"</div>
-                    <div class="testi-author">— Khairul A.</div>
-                </div>
-
-                <div class="testi-card">
-                    <div class="testi-text">"Vibe kedai premium dan santai. Servis Beard Shave dengan tuala panas mereka memang gred terbaik yang pernah saya rasa."</div>
-                    <div class="testi-author">— Shahrul Nizam</div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- 5. FINAL CTA SECTION -->
-    <section class="cta-section">
-        <div class="container">
-            <h2>Sertai Kerabat Kami.</h2>
-            <p>Jangan biarkan gaya anda pudar. Tempah slot eksklusif anda sekarang dan alami standard baru pengurusan penampilan lelaki.</p>
-            <button class="btn" onclick="openWhatsApp()">Tempah Sekarang</button>
-        </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer>
-        <p>&copy; 2026 The Kerabat. All Rights Reserved. Crafted for the Modern Gent.</p>
-    </footer>
-
-    <!-- STICKY BUTTON CONTAINER (WHATSAPP & INSTAGRAM) -->
-    <div class="sticky-container">
-        <a href="https://www.instagram.com/the.kerabat/" target="_blank" class="sticky-btn sticky-instagram">
-            📸 Instagram
-        </a>
-        <a href="#" class="sticky-btn sticky-whatsapp" onclick="openWhatsApp(event)">
-            💬 Tempah Slot
-        </a>
-    </div>
-
-    <!-- --- VANILLA JAVASCRIPT --- -->
-    <script>
-        // Masukkan nombor WhatsApp perniagaan anda di sini (sertakan kod negara, cth: 60123456789)
-        const WHATSAPP_NUMBER = "60123456789"; 
-        const MESSAGE_TEXT = "Salam The Kerabat, saya nak booking slot untuk potong rambut. Ada slot kosong terdekat?";
-
-        function openWhatsApp(event) {
-            if(event) event.preventDefault(); // Mengelakkan aksi lompat pautan sauh
             
-            const encodedMessage = encodeURIComponent(MESSAGE_TEXT);
-            const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodedMessage}`;
+            <!-- Navigasi Tengah -->
+            <nav class="hidden md:flex space-x-10 text-sm font-medium text-slate-400">
+                <a href="#" class="hover:text-emerald-400 transition-colors duration-200">Platform</a>
+                <a href="#" class="hover:text-emerald-400 transition-colors duration-200">Arsitektur</a>
+                <a href="#" class="hover:text-emerald-400 transition-colors duration-200">Pelan Komuniti</a>
+            </nav>
+
+            <!-- Aksi Kanan -->
+            <div class="flex items-center space-x-6">
+                <a href="#" class="text-sm font-medium text-slate-400 hover:text-white transition">Akaun</a>
+                <a href="#" class="bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-slate-950 text-sm font-bold px-5 py-2.5 rounded-lg transition-all duration-300 shadow-lg shadow-emerald-500/20">
+                    Bina Hub Percuma
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- 2. ASYMMETRIC HERO SECTION (Bukan Center-Aligned) -->
+    <main class="max-w-7xl mx-auto px-6 pt-16 pb-24 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <!-- Teks Kiri -->
+        <div class="lg:col-span-7 space-y-8 text-left">
+            <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span> Generasi Enjin AI V2
+            </span>
+            <h1 class="text-4xl sm:text-5xl md:text-6xl font-black text-white tracking-tight leading-[1.15]">
+                Suntik Kod AI.<br>
+                <span class="bg-gradient-to-r from-emerald-400 via-teal-400 to-cyan-400 bg-clip-text text-transparent">Tembus Pautan</span><br>
+                Secara Instan.
+            </h1>
+            <p class="text-base md:text-lg text-slate-400 max-w-xl leading-relaxed">
+                Platform deployment khusus untuk usahawan digital Malaysia. Tukar output mentah daripada AI kegemaran anda menjadi produk web pelbagai halaman yang pantas, selamat, dan sedia untuk klien dalam beberapa saat.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 pt-4">
+                <a href="#" class="bg-slate-800 hover:bg-slate-750 text-white font-semibold px-8 py-4 rounded-xl border border-slate-700 transition shadow-inner text-center">
+                    Buka Workspace
+                </a>
+                <a href="#" class="bg-gradient-to-r from-emerald-500 to-teal-600 text-slate-950 font-bold px-8 py-4 rounded-xl transition text-center hover:opacity-90">
+                    Pelajari Studio Alatan →
+                </a>
+            </div>
+        </div>
+
+        <!-- Visual Kanan (Mockup Editor Kod Alternatif) -->
+        <div class="lg:col-span-5 bg-slate-900/40 border border-slate-800 p-6 rounded-2xl shadow-2xl relative overflow-hidden group">
+            <div class="absolute -top-24 -right-24 w-48 h-48 bg-emerald-500/10 rounded-full blur-3xl group-hover:bg-emerald-500/20 transition-all duration-500"></div>
+            <!-- Bar Atas Tingkap -->
+            <div class="flex items-center justify-between border-b border-slate-800 pb-4 mb-4">
+                <div class="flex space-x-2">
+                    <span class="w-3 h-3 rounded-full bg-rose-500/40"></span>
+                    <span class="w-3 h-3 rounded-full bg-amber-500/40"></span>
+                    <span class="w-3 h-3 rounded-full bg-emerald-500/40"></span>
+                </div>
+                <span class="text-xs font-mono text-slate-500">nexus-workspace.config</span>
+            </div>
+            <!-- Simulasi Kod -->
+            <pre class="text-xs font-mono text-slate-400 space-y-1 overflow-x-auto">
+<code><span class="text-purple-400">import</span> { AI_Engine } <span class="text-purple-400">from</span> <span class="text-emerald-400">'@nexus/core'</span>;
+
+<span class="text-slate-500">// Menghubungkan output AI ke Live Link</span>
+<span class="text-purple-400">const</span> project = <span class="text-purple-400">new</span> AI_Engine({
+  framework: <span class="text-amber-400">'Multipage_HTML5'</span>,
+  ssl: <span class="text-amber-400">true</span>,
+  edge_hosting: <span class="text-amber-400">true</span>
+});
+
+project.deploy().then((url) => {
+  console.log(<span class="text-emerald-400">`Aplikasi sedia di: ${url}`</span>);
+});</code></pre>
+        </div>
+    </main>
+
+    <!-- 3. CARDS SECTION (Glassmorphism & Border Glow Effect) -->
+    <section class="border-t border-slate-900 bg-[#080B13] py-24">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-4">
+                <div>
+                    <h2 class="text-2xl md:text-4xl font-extrabold text-white tracking-tight">Ekosistem Pembangunan Tanpa Geseran</h2>
+                    <p class="mt-2 text-slate-400 text-sm md:text-base">Satu langganan untuk melompati semua proses renyah Server Management.</p>
+                </div>
+                <a href="#" class="text-sm font-semibold text-emerald-400 hover:text-emerald-300 transition whitespace-nowrap">
+                    Bandingkan fungsi penuh &rarr;
+                </a>
+            </div>
             
-            window.open(whatsappUrl, '_blank');
-        }
-    </script>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Kad Ciri 1 -->
+                <div class="p-8 rounded-2xl bg-slate-900/20 border border-slate-800 hover:border-slate-700/80 transition-all duration-300 relative group">
+                    <div class="w-10 h-10 bg-emerald-500/10 border border-emerald-500/20 rounded-lg flex items-center justify-center text-emerald-400 text-lg font-bold mb-6">
+                        01
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2 group-hover:text-emerald-400 transition">Kompilasi Kod Lancar</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Masukkan struktur skrip HTML/CSS multipage anda dan biarkan sistem kami mengoptimumkannya untuk kelajuan capaian maksimum.
+                    </p>
+                </div>
+                <!-- Kad Ciri 2 -->
+                <div class="p-8 rounded-2xl bg-slate-900/20 border border-slate-800 hover:border-slate-700/80 transition-all duration-300 relative group">
+                    <div class="w-10 h-10 bg-emerald-500/10 border border-emerald-500/20 rounded-lg flex items-center justify-center text-emerald-400 text-lg font-bold mb-6">
+                        02
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2 group-hover:text-emerald-400 transition">NexusSpace Edge Node</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Infrastruktur hos pintar bersepadu yang memastikan tapak projek anda terus aktif dengan sijil sekuriti SSL global automatik.
+                    </p>
+                </div>
+                <!-- Kad Ciri 3 -->
+                <div class="p-8 rounded-2xl bg-slate-900/20 border border-slate-800 hover:border-slate-700/80 transition-all duration-300 relative group">
+                    <div class="w-10 h-10 bg-emerald-500/10 border border-emerald-500/20 rounded-lg flex items-center justify-center text-emerald-400 text-lg font-bold mb-6">
+                        03
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2 group-hover:text-emerald-400 transition">Skalabiliti Kos Terkawal</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Gunakan pelan komersial agensi tunggal untuk menguruskan portfolio tapak web milik klien anda tanpa caj tersembunyi.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
 
 </body>
 </html>
