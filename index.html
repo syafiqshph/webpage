@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Kerabat | Premium Barbershop & Grooming</title>
+    <title>The Kerabat | Klasik. Moden. Maskulin.</title>
     
-    <!-- Google Fonts: Syne & Inter untuk vibe Hipster/Bold/Maskulin -->
+    <!-- Google Fonts: Syne & Inter untuk vibe Hipster Ultra-Bold & Clean -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Syne:wght@700;800&display=swap" rel="stylesheet">
@@ -14,14 +14,14 @@
         /* --- VANILLA CSS VARIABLES & RESET --- */
         :root {
             --bg-dark: #09090b;
-            --bg-card: #141417;
-            --primary: #d4af37; /* Emas Hipster / Matte Gold */
-            --primary-hover: #f3cd44;
-            --text-light: #ffffff;
-            --text-muted: #a1a1aa;
+            --bg-card: #141416;
+            --primary: #ffffff; /* Minimalist Bold White */
+            --accent: #e4e4e7;  /* Light Gray */
+            --text-muted: #71717a;
+            --border-color: #27272a;
             --font-heading: 'Syne', sans-serif;
             --font-body: 'Inter', sans-serif;
-            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         * {
@@ -36,7 +36,7 @@
 
         body {
             background-color: var(--bg-dark);
-            color: var(--text-light);
+            color: var(--primary);
             font-family: var(--font-body);
             line-height: 1.6;
             overflow-x: hidden;
@@ -45,7 +45,7 @@
         /* --- UTILITIES --- */
         .container {
             width: 90%;
-            max-width: 1100px;
+            max-width: 1050px;
             margin: 0 auto;
             padding: 100px 0;
         }
@@ -68,18 +68,7 @@
         .btn:hover {
             background-color: transparent;
             color: var(--primary);
-            box-shadow: 0 0 25px rgba(212, 175, 55, 0.3);
-        }
-
-        .btn-outline {
-            background-color: transparent;
-            color: var(--text-light);
-            border: 2px solid #27272a;
-        }
-
-        .btn-outline:hover {
-            border-color: var(--primary);
-            color: var(--primary);
+            box-shadow: 0 0 25px rgba(255, 255, 255, 0.15);
         }
 
         .section-title {
@@ -89,11 +78,13 @@
             text-transform: uppercase;
             margin-bottom: 50px;
             line-height: 1;
-            letter-spacing: -1px;
+            letter-spacing: -1.5px;
         }
 
         .section-title span {
-            color: var(--primary);
+            color: var(--text-muted);
+            -webkit-text-stroke: 1px var(--text-muted);
+            -webkit-text-fill-color: transparent;
         }
 
         /* --- HERO SECTION --- */
@@ -121,27 +112,25 @@
         }
 
         .hero h1 span {
-            color: var(--primary);
             display: block;
+            color: #3f3f46;
+            -webkit-text-stroke: 1px #71717a;
+            -webkit-text-fill-color: transparent;
         }
 
         .hero p {
-            font-size: 1.25rem;
-            color: var(--text-muted);
-            margin-bottom: 40px;
+            font-size: 1.3rem;
+            color: #a1a1aa;
+            margin-bottom: 45px;
             max-width: 600px;
-        }
-
-        .hero-cta-group {
-            display: flex;
-            gap: 15px;
-            flex-wrap: wrap;
+            font-weight: 400;
         }
 
         /* --- SERVICES SECTION --- */
         .services {
-            background-color: #020202;
-            border-top: 1px solid #18181b;
+            background-color: #0c0c0e;
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
         }
 
         .services-grid {
@@ -153,7 +142,7 @@
         .service-card {
             background-color: var(--bg-card);
             padding: 50px 40px;
-            border: 1px solid #27272a;
+            border: 1px solid var(--border-color);
             transition: var(--transition);
             display: flex;
             flex-direction: column;
@@ -162,28 +151,27 @@
 
         .service-card:hover {
             border-color: var(--primary);
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            transform: translateY(-4px);
         }
 
         .service-name {
             font-family: var(--font-heading);
-            font-size: 1.75rem;
+            font-size: 1.7rem;
             text-transform: uppercase;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
             letter-spacing: -0.5px;
         }
 
         .service-price {
             font-family: var(--font-heading);
-            font-size: 2.5rem;
+            font-size: 2.3rem;
             color: var(--primary);
             font-weight: 800;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
         }
 
         .service-desc {
-            color: var(--text-muted);
+            color: #a1a1aa;
             font-size: 1rem;
         }
 
@@ -196,24 +184,32 @@
 
         .why-card h3 {
             font-family: var(--font-heading);
-            font-size: 1.5rem;
+            font-size: 1.4rem;
             text-transform: uppercase;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
             letter-spacing: -0.5px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
 
-        .why-card h3 span {
-            color: var(--primary);
+        .why-card h3::before {
+            content: ' ';
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background-color: var(--primary);
         }
 
         .why-card p {
-            color: var(--text-muted);
+            color: #a1a1aa;
             font-size: 1rem;
         }
 
         /* --- TESTIMONIALS SECTION --- */
         .testimonials {
-            background-color: #020202;
+            background-color: #0c0c0e;
+            border-top: 1px solid var(--border-color);
         }
 
         .testi-grid {
@@ -225,23 +221,23 @@
         .testi-card {
             background-color: var(--bg-card);
             padding: 50px;
-            border-left: 3px solid var(--primary);
+            border: 1px solid var(--border-color);
         }
 
         .testi-text {
             font-style: italic;
             font-size: 1.2rem;
             margin-bottom: 30px;
-            color: #e4e4e7;
+            color: var(--accent);
             line-height: 1.7;
         }
 
         .testi-author {
             font-family: var(--font-heading);
             text-transform: uppercase;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             letter-spacing: 2px;
-            color: var(--primary);
+            font-weight: 700;
         }
 
         /* --- FINAL CTA SECTION --- */
@@ -250,7 +246,7 @@
             background: linear-gradient(rgba(9,9,11,0.92), rgba(9,9,11,0.92)), 
                         url('https://images.unsplash.com/photo-1585747860715-2ba37e788b70?q=80&w=1200') no-repeat center center/cover;
             padding: 140px 0;
-            border-top: 1px solid #18181b;
+            border-top: 1px solid var(--border-color);
         }
 
         .cta-section h2 {
@@ -263,13 +259,13 @@
         }
 
         .cta-section p {
-            color: var(--text-muted);
+            color: #a1a1aa;
             max-width: 650px;
             margin: 0 auto 50px auto;
             font-size: 1.3rem;
         }
 
-        /* --- STICKY SOCIAL BUTTONS (CONVERSION DRIVERS) --- */
+        /* --- STICKY BUTTONS (WHATSAPP & INSTAGRAM) --- */
         .sticky-container {
             position: fixed;
             bottom: 30px;
@@ -281,59 +277,51 @@
         }
 
         .sticky-btn {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            padding: 16px 24px;
-            border-radius: 4px; /* Minimalist Boxy Hipster Style */
+            padding: 15px 25px;
             font-family: var(--font-heading);
             font-weight: 800;
             text-transform: uppercase;
             text-decoration: none;
             font-size: 0.85rem;
             letter-spacing: 0.5px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
             transition: var(--transition);
+            border-radius: 2px;
+        }
+
+        .sticky-whatsapp {
+            background-color: #25d366;
             color: #ffffff;
+        }
+
+        .sticky-instagram {
+            background-color: #ffffff;
+            color: #000000;
         }
 
         .sticky-btn:hover {
             transform: translateY(-3px);
         }
 
-        .sticky-whatsapp {
-            background-color: #25d366;
-        }
-        .sticky-whatsapp:hover {
-            box-shadow: 0 15px 30px rgba(37, 211, 102, 0.3);
-        }
-
-        .sticky-instagram {
-            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
-        }
-        .sticky-instagram:hover {
-            box-shadow: 0 15px 30px rgba(220, 39, 67, 0.3);
-        }
-
         /* --- FOOTER --- */
         footer {
             background-color: #000000;
-            padding: 50px 0;
+            padding: 40px 0;
             text-align: center;
             font-size: 0.85rem;
-            color: #3f3f46;
-            border-top: 1px solid #18181b;
+            color: #52525b;
+            border-top: 1px solid var(--border-color);
         }
 
         /* --- RESPONSIVE DESIGN --- */
         @media (max-width: 768px) {
-            .hero h1 { font-size: 3.2rem; letter-spacing: -1px; }
-            .section-title { font-size: 2.3rem; }
+            .hero h1 { font-size: 3.2rem; }
+            .section-title { font-size: 2.4rem; }
             .cta-section h2 { font-size: 2.6rem; }
             .container { padding: 70px 0; }
-            .hero-cta-group { flex-direction: column; width: 100%; }
-            .hero-cta-group .btn { text-align: center; width: 100%; }
             .sticky-container {
                 bottom: 20px;
                 right: 20px;
@@ -342,11 +330,10 @@
             }
             .sticky-btn {
                 flex: 1;
-                padding: 14px 10px;
+                justify-content: center;
+                padding: 14px;
                 font-size: 0.75rem;
-                gap: 6px;
             }
-            body { padding-bottom: 60px; } /* Beri ruang untuk sticky di mobile */
         }
     </style>
 </head>
@@ -356,12 +343,9 @@
     <section class="hero">
         <div class="container">
             <div class="hero-content">
-                <h1>Lebih Daripada Gunting. <br>Ini <span>Martabat Lelaki.</span></h1>
-                <p>Di The Kerabat, kami mengembalikan tradisi kekemasan maskulin sejati. Setiap potong adalah hasil kerja teliti demi memastikan karisma anda berada pada tahap tertinggi.</p>
-                <div class="hero-cta-group">
-                    <a href="#servis" class="btn">Lihat Servis & Booking</a>
-                    <a href="https://www.instagram.com/the.kerabat/" target="_blank" class="btn btn-outline">Eksplor Instagram</a>
-                </div>
+                <h1>The Kerabat. <span>Darah Barber.</span></h1>
+                <p>Kami tidak sekadar memotong rambut. Di The Kerabat, setiap perincian adalah tradisi, gaya, dan ketajaman identiti maskulin sebenar yang eksklusif untuk anda.</p>
+                <a href="#servis" class="btn">Teroka Servis</a>
             </div>
         </div>
     </section>
@@ -369,34 +353,34 @@
     <!-- 2. SERVIS & HARGA SECTION -->
     <section id="servis" class="services">
         <div class="container">
-            <h2 class="section-title">Menu <span>Grooming</span></h2>
+            <h2 class="section-title">Menu <span>Servis</span></h2>
             <div class="services-grid">
                 
                 <!-- Card 1 -->
                 <div class="service-card">
                     <div>
-                        <div class="service-name">The Kerabat Cut</div>
+                        <div class="service-name">Kerabat Haircut</div>
                         <div class="service-price">RM35</div>
                     </div>
-                    <div class="service-desc">Guntingan rambut premium mengikut kesesuaian bentuk kepala, cuci rambut segar, dan penggayaan pomade eksklusif.</div>
+                    <div class="service-desc">Potongan rambut signature mengikut struktur kepala, cucian segar, dan kemasan penggayaan premium.</div>
                 </div>
 
                 <!-- Card 2 -->
                 <div class="service-card">
                     <div>
-                        <div class="service-name">Beard Detailing & Razor Shave</div>
+                        <div class="service-name">Beard & Shave</div>
                         <div class="service-price">RM25</div>
                     </div>
-                    <div class="service-desc">Pencukuran dan perapian jambang menggunakan pisau cukur lurus klasik bersama balutan tuala panas yang menenangkan.</div>
+                    <div class="service-desc">Kemasan dan pembentukan jambang menggunakan pisau cukur lurus tradisional bersama tuala suam.</div>
                 </div>
 
                 <!-- Card 3 -->
                 <div class="service-card">
                     <div>
-                        <div class="service-name">Royal Treatment (Combo)</div>
+                        <div class="service-name">The Royal Treatment</div>
                         <div class="service-price">RM55</div>
                     </div>
-                    <div class="service-desc">Gabungan pakej potong rambut premium, perapian jambang, urutan kepala rileksasi, dan rawatan tonik rambut.</div>
+                    <div class="service-desc">Pakej penuh bangsawan: Haircut eksklusif, detailing jambang, urutan kepala premium, dan rawatan kesegaran wajah.</div>
                 </div>
 
             </div>
@@ -406,22 +390,22 @@
     <!-- 3. KENAPA PILIH KAMI SECTION -->
     <section class="why-us">
         <div class="container">
-            <h2 class="section-title">Kenapa Menyertai <span>The Kerabat?</span></h2>
+            <h2 class="section-title">Kenapa <span>The Kerabat?</span></h2>
             <div class="why-us-grid">
                 
                 <div class="why-card">
-                    <h3><span>01 //</span> Barber Berkepakaran</h3>
-                    <p>Barber kami tidak melakukan potongan secara sembarangan. Setiap gaya dianalisis mengikut jenis rambut dan tekstur peribadi anda.</p>
+                    <h3>Ketukangan Gred Tinggi</h3>
+                    <p>Barber kami bekerja dengan ketelitian tinggi. Setiap garisan fade dan potongan dipastikan simetri dan tajam.</p>
                 </div>
 
                 <div class="why-card">
-                    <h3><span>02 //</span> Estetik & Vibe Eksklusif</h3>
-                    <p>Ruang potong yang selesa dengan atmosfera hipster moden yang maskulin, direka khas untuk tempat anda berehat.</p>
+                    <h3>Estetik Hipster Minimalis</h3>
+                    <p>Suasana ruang premium yang tenang, maskulin, dan bebas daripada kesibukan biasa—ruang khas untuk lelaki sejati beristirehat.</p>
                 </div>
 
                 <div class="why-card">
-                    <h3><span>03 //</span> Produk Gred Premium</h3>
-                    <p>Kami hanya menggunakan barangan penjagaan rambut dan kulit kepala berkualiti tinggi yang mengekalkan kesihatan jangka panjang.</p>
+                    <h3>Grooming Terpilih</h3>
+                    <p>Hanya menggunakan produk penjagaan rambut dan minyak jambang bertaraf premium demi mengekalkan kesihatan kulit kepala anda.</p>
                 </div>
 
             </div>
@@ -431,17 +415,17 @@
     <!-- 4. TESTIMONI SECTION -->
     <section class="testimonials">
         <div class="container">
-            <h2 class="section-title">Apa Kata <span>Brotherhood Kami</span></h2>
+            <h2 class="section-title">Suara <span>Kerabat</span></h2>
             <div class="testi-grid">
                 
                 <div class="testi-card">
-                    <div class="testi-text">"Paling puas hati dengan hasil line up dan fade dia. Kemas, sharp, dan barber sangat perinci dalam kerja."</div>
-                    <div class="testi-author">- Hazim F.</div>
+                    <div class="testi-text">"Kerja kemas gila. Barber dekat sini betul-betul faham bentuk muka dan jenis rambut sebelum potong. Sangat recommend!"</div>
+                    <div class="testi-author">— Khairul A.</div>
                 </div>
 
                 <div class="testi-card">
-                    <div class="testi-text">"Vibe kedai terbaik. Pakej tuala panas dia memang berbaloi, rasa macam premium treatment tapi harga sangat berpatutan."</div>
-                    <div class="testi-author">- Shahrul Nizam</div>
+                    <div class="testi-text">"Vibe kedai premium dan santai. Servis Beard Shave dengan tuala panas mereka memang gred terbaik yang pernah saya rasa."</div>
+                    <div class="testi-author">— Shahrul Nizam</div>
                 </div>
 
             </div>
@@ -451,39 +435,37 @@
     <!-- 5. FINAL CTA SECTION -->
     <section class="cta-section">
         <div class="container">
-            <h2>Masa Untuk Segarkan Gaya Anda?</h2>
-            <p>Jangan biarkan rambut dan jambang yang tidak terurus merosakkan keyakinan diri anda. Tempah slot anda bersama The Kerabat hari ini.</p>
-            <button class="btn" onclick="redirectToWhatsApp()">Tempah Slot Sekarang</button>
+            <h2>Sertai Kerabat Kami.</h2>
+            <p>Jangan biarkan gaya anda pudar. Tempah slot eksklusif anda sekarang dan alami standard baru pengurusan penampilan lelaki.</p>
+            <button class="btn" onclick="openWhatsApp()">Tempah Sekarang</button>
         </div>
     </section>
 
     <!-- FOOTER -->
     <footer>
-        <p>&copy; 2026 The Kerabat. All Rights Reserved. Crafted for the Modern Gentlemen.</p>
+        <p>&copy; 2026 The Kerabat. All Rights Reserved. Crafted for the Modern Gent.</p>
     </footer>
 
-    <!-- STICKY CONVERSION CONTAINER -->
+    <!-- STICKY BUTTON CONTAINER (WHATSAPP & INSTAGRAM) -->
     <div class="sticky-container">
-        <!-- Instagram Link -->
         <a href="https://www.instagram.com/the.kerabat/" target="_blank" class="sticky-btn sticky-instagram">
-            <span>📸</span> Instagram
+            📸 Instagram
         </a>
-        <!-- WhatsApp Link -->
-        <a href="#" class="sticky-btn sticky-whatsapp" onclick="redirectToWhatsApp(event)">
-            <span>💬</span> Slot Booking
+        <a href="#" class="sticky-btn sticky-whatsapp" onclick="openWhatsApp(event)">
+            💬 Tempah Slot
         </a>
     </div>
 
     <!-- --- VANILLA JAVASCRIPT --- -->
     <script>
-        // Sila tukar nombor telefon WhatsApp perniagaan anda di bawah ini
+        // Masukkan nombor WhatsApp perniagaan anda di sini (sertakan kod negara, cth: 60123456789)
         const WHATSAPP_NUMBER = "60123456789"; 
-        const DEFAULT_MESSAGE = "Salam The Kerabat, saya nak tempah slot untuk potong rambut. Ada kekosongan waktu terdekat?";
+        const MESSAGE_TEXT = "Salam The Kerabat, saya nak booking slot untuk potong rambut. Ada slot kosong terdekat?";
 
-        function redirectToWhatsApp(event) {
-            if(event) event.preventDefault(); // Mengelakkan tindakan sauh (anchor link) lalai
+        function openWhatsApp(event) {
+            if(event) event.preventDefault(); // Mengelakkan aksi lompat pautan sauh
             
-            const encodedMessage = encodeURIComponent(DEFAULT_MESSAGE);
+            const encodedMessage = encodeURIComponent(MESSAGE_TEXT);
             const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodedMessage}`;
             
             window.open(whatsappUrl, '_blank');
